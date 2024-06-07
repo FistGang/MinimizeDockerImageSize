@@ -1,0 +1,12 @@
+# Optimized Dockerfile using Alpine Linux
+FROM alpine:latest
+
+# Install nginx
+RUN apk --no-cache add nginx
+
+# Expose port 80
+EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
+

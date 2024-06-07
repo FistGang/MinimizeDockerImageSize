@@ -1,0 +1,12 @@
+# Optimized Dockerfile using Alpine Linux
+FROM alpine:latest
+
+# Combine multiple RUN commands to reduce layers
+RUN apk --no-cache update && apk --no-cache add nginx
+
+# Expose port 80
+EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
+

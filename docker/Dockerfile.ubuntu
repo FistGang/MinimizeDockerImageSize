@@ -1,0 +1,12 @@
+# Naive Dockerfile using Ubuntu
+FROM ubuntu:latest
+
+# Install nginx
+RUN apt-get update && apt-get install -y nginx
+
+# Expose port 80
+EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
+

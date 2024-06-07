@@ -1,0 +1,14 @@
+FROM node:14
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the the application code
+COPY . .
+
+# Install dependencies (no cached if source code changed)
+RUN npm install
+
+# Building the application
+RUN npm run build
+

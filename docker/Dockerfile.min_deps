@@ -1,0 +1,15 @@
+# Optimized Dockerfile using Python and Flask
+FROM python:3.9-alpine
+
+# Install only necessary dependencies in a single RUN command
+RUN pip install Flask
+
+# Copy application code
+COPY . /app
+
+# Set the working directory
+WORKDIR /app
+
+# Run the application
+CMD ["python", "app.py"]
+
